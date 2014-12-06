@@ -546,6 +546,10 @@ if __name__ == '__main__':
         cb.append_text(row[4])
     cb.set_active(6)    # pen
 
+    # Fake clicking "OK"
+    dialog.confirm()
+    sys.exit(doit(dialog.settings))
+
     # Run application
     gtk.main()
 
