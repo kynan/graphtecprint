@@ -319,8 +319,9 @@ def doit(settings):
         if res != "0\x03":
             print "graphtecprint: Fatal: Error in handshake."
             print "Got res %r, expected 0\\x03." % res
-            f.close()
-            return 4
+            # FIXME: ignore this error for now, seems not to matter
+            # f.close()
+            # return 4
 
     f.write("TT\x03")
     f.write("FG\x03")
