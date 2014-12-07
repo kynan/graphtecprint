@@ -297,7 +297,7 @@ if __name__ == '__main__':
     else:
         import gtp_loader
         l = gtp_loader.loader()
-        l.load(sys.stdin)
+        l.load(sys.argv[1] if len(sys.argv) > 1 else sys.stdin)
         for color in l.colors():
             cstrokes[color] = l.strokes(color)
         # old compat ...
