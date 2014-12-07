@@ -92,6 +92,8 @@ def readresult(f):
 
 
 def doit(settings):
+    if not printers:
+        raise RuntimeError("No printer detected!")
     printer = printers[settings["printer"]]
     print printer
     page = papersizes[settings["papersize"]]
