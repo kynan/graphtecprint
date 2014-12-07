@@ -49,9 +49,9 @@ class loader:
     p2 = subprocess.Popen([self.pstoedit,'-dt','-f','tgif'], 
         stdin=file_in, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     (child_out,child_err) = p2.communicate()
-    child_err = re.sub('^pstoedit: .*', '', child_err, re.M)
-    if not re.match('\s*$', child_err, re.S):
-      raise IOError, child_err + "\n\npstoedit failed. Not a postscipt file?"
+    # child_err = re.sub('^pstoedit: .*', '', child_err, re.M)
+    # if not re.match('\s*$', child_err, re.S):
+    #   raise IOError, child_err + "\n\npstoedit failed. Not a postscipt file?"
 
     self.mstrokes = []   # all, for compat...
     self.cstrokes = {}  # by color
